@@ -1,0 +1,24 @@
+// Place all the styles related to the homepages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+h1{
+	font-family: silver, sans-serif;
+	font-size: 40px;
+	text-shadow: 2px 2px 8px black;
+	color: #D2D2D2;
+	margin-left: 100px;
+}
+
+body {
+	background-color: linear-gradient( white, #FFF8C6, white);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+
+#elephant {
+	margin-top: -150px;
+	float: right;
+	transform: scalex(-1);
+}

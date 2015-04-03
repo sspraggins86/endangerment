@@ -13,9 +13,8 @@ Animal.create(
 	[ 
 		{name: "Sumatran Elephant", population: 2000},
 		{name: "Borneo Pygmy Elephant", population: 1000},
-		{name: "Indian Elephant", population: 20000},
 		{name: "Black Rhino", population: 5000},
-		{name: "Javan Rhino", population: 35},
 		{name: "Sumatran Rhino", population: 300},
 		{name: "Greater One-Horned Rhino", population: 3000},
+		{name: "Javan Rhino", population: 35},
 	])

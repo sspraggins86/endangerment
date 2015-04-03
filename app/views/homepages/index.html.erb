@@ -1,20 +1,24 @@
-<h1>The endangerment of Elephants and Rhinoceros</h1>
 
+<h1>Endangered <br />Elephants and Rhinoceros</h1>
+
+<img id="elephant" src="https://s-media-cache-ak0.pinimg.com/736x/27/ee/5e/27ee5e8600af4d6af7003f80b7d8ffbe.jpg">
 
 <script>
 
-//  pie chart
+// //  donut chart
    d3.json("/animals.json", function(data) {
+
   	// var data = [10, 50, 70]
+    // var data = [2000, 1000, 20000, 5000, 35, 300, 3000];
 
   	var r = 150;
-    var p = Math.PI * 2;
+    // var p = Math.PI * 2;
 
     var width = 400;
     var height = 400;
 
     var color = d3.scale.ordinal()
-    	.range(["pink", "orange", "red", "yellow", "green", "blue", "purp"])
+    	.range(["yellow", "orange", "#DF3A0A", "#F35F00","red", "#960000", "#380906"])
 
   	var canvas = d3.select('body')
 		.append("svg")
@@ -23,16 +27,16 @@
 
 	
     var group = canvas.append("g")
-    	.attr("transform", "translate(300, 300)");
+    	.attr("transform", "translate(200, 200)");
 
 	var arc = d3.svg.arc()
-		.innerRadius(100)
+		.innerRadius(75)
 		.outerRadius(r)
-	    .startAngle(0)
-		.endAngle(p)
+	 //    .startAngle(0)
+		// .endAngle(p)
 
 	var pie = d3.layout.pie()
-		.value(function(d) { return d; });
+		.value(function(d) { return d.population; });
 
 	var arcs = group.selectAll(".arc")
 		.data(pie(data))
@@ -40,21 +44,24 @@
 		.append("g")
 		.attr("class", "arc");
 
+
 // *one cirlce is equivelant to 6.28 radiants
 	arcs.append("path")
 		.attr("d", arc)	
-		.attr("fill", function(d) { return color(d.data); });
+		.attr("fill", function(d) { return color(d.data.population); });
 
 	arcs.append("text")
 		.attr("transform", function(d) { return "translate (" + arc.centroid(d) + ") "; })
 		.attr("text-anchor", "middle")
-		.attr("font-size", "1.5")
-		.text(function(d) { return d.data; });
+		.attr("font-size", "1.0em")
+		.attr("fill", "green")
+		.text(function(d) { return d.data.name; });
+
  });
 
 
 
-// box chart-------------------
+// // box chart-------------------
  d3.json("/animals.json", function(data) {
  //    var dataArray = [20, 40, 100, 300, 458];
     var width = 1100;
@@ -62,12 +69,12 @@
 
     var widthScale = d3.scale.linear()
         // .base(10)
-    	.domain([0, 20000])
-    	.range([0, width - 50]);
+    	.domain([0, d3.max(data, function(x) { return x.population; })])
+    	.range([0, width - 0]);
 
     var color = d3.scale.linear()
-    	.domain([0, 20000])
-    	.range(["yellow", "green"]);
+    	.domain([0, d3.max(data, function(x) { return x.population; })])
+    	.range(["yellow", "#960000"]);
 
     var axis = d3.svg.axis()
     	.ticks(10)
@@ -87,18 +94,18 @@
 			.attr("width", function(d) {return widthScale(d.population) })
 			.attr("height", 40)
 			.attr("fill", function(d) { return color(d.population) })
-			.attr("y", function(d, i) { return i * 40 });
+			.attr("y", function(d, i) { return i * 50 });
 
     canvas.selectAll("text")
     	.data(data)
     	.enter()
     		.append("text")
-    		.attr("fill", "black")
-    		.attr("y", function(d, i) { return i * 40 + 24; })
+    		.attr("fill", "green")
+    		.attr("y", function(d, i) { return i * 50 + 24; })
     		.text(function(d) {return d.name; });
 
 	canvas.append("g")
-		.attr("transform", "translate(0, 300)")
+		.attr("transform", "translate(0, 305)")
 		.call(axis);
 
 
@@ -200,5 +207,6 @@
     
 
 
-</script>
 
+
+</script>
