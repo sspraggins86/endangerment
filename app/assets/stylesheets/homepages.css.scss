@@ -11,6 +11,64 @@ h1{
 	margin-left: 100px;
 }
 
+.legend {
+	position: relative;
+	width: 450px;
+	height: 150px;
+	margin-left: 50px;
+	margin-bottom: -210px;
+	margin-top: 60px;
+	padding: 20px;
+
+}
+
+h2 {
+	font-size: 40px;
+	color: #D2D2D2;
+	font-family: silver, sans-serif;
+	text-shadow: 2px 2px 8px black;
+	margin-left: 40px;
+	padding-bottom: -15px;
+}
+
+ul {
+	margin-top: -20px;
+}
+
+li {
+	list-style: none;
+	color: green;
+	font-size: 25px;
+	font-family: silver, sans-serif;
+	text-shadow: 1px 1px 4px black;
+	text-align: left;
+	padding-bottom: 2px;
+}
+
+#sume {
+	color: yellow;
+}
+
+#bpe {
+	color: orange;
+}
+
+#black {
+	color: #DF3A0A;
+}
+
+#sumr {
+	color: #F35F00;
+}
+
+#great {
+	color: red;
+}
+
+#jav {
+	color: #960000;
+}
+
 body {
 	background-color: linear-gradient( white, #FFF8C6, white);
 	background-size: 100% 100%;
@@ -18,7 +76,7 @@ body {
 }
 
 #elephant {
-	margin-top: -150px;
+	margin-top: -160px;
 	float: right;
 	transform: scalex(-1);
 }

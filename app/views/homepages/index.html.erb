@@ -1,7 +1,29 @@
-
+<br />
 <h1>Endangered <br />Elephants and Rhinoceros</h1>
 
 <img id="elephant" src="https://s-media-cache-ak0.pinimg.com/736x/27/ee/5e/27ee5e8600af4d6af7003f80b7d8ffbe.jpg">
+
+<br />
+<div class="legend">
+    <h2>Animals</h2>
+    <ul>
+        <li id="sume">Sumatran Elephant</li>
+        <li id="bpe">Borneo Pygmy Elephant</li>
+        <li id="black">Black Rhino</li>
+        <li id="sumr">Sumatran Rhino</li>
+        <li id="great">Greater One-Horned Rhino</li>
+        <li id="jav">Javan Rhino</li>
+    </ul>
+</div>
+
+<!-- <div class="color">
+    <div id="sumele"></div>
+    <div id="bpe"></div>
+    <div id="black"></div>
+    <div id="sumrhino"></div>
+    <div id="greater"></div>
+    <div id="javan"></div>
+</div> -->
 
 <script>
 
@@ -53,14 +75,15 @@
 	arcs.append("text")
 		.attr("transform", function(d) { return "translate (" + arc.centroid(d) + ") "; })
 		.attr("text-anchor", "middle")
-		.attr("font-size", "1.0em")
+		.attr("font-size", "15px")
 		.attr("fill", "green")
-		.text(function(d) { return d.data.name; });
+        .attr("padding", "1")
+		.text(function(d) { return d.data.population; });
 
  });
+</script>
 
-
-
+<script>
 // // box chart-------------------
  d3.json("/animals.json", function(data) {
  //    var dataArray = [20, 40, 100, 300, 458];
@@ -210,3 +233,5 @@
 
 
 </script>
+
+
